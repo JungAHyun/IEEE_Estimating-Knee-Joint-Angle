@@ -218,7 +218,7 @@ def build_bottleneck_block_2d(filter_num, blocks, stride=1):
     return res_block
 
 def save_result(y_val, y_pred):
-    save_val_file  = "Result\\both_val_result.csv"
+    save_val_file  = "Result\\both_val_result_run2.csv"
     data = np.stack([y_val, y_pred, reader.L_rawsum, reader.R_rawsum], -1)
     df = pd.DataFrame(data, columns=["Joint_Angle", "Predict_Angle", "L_rawsum", "R_rawsum"])
     df.to_csv(save_val_file)
